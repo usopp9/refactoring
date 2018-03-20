@@ -14,7 +14,9 @@ public class Main {
 		//testChap01();
 		//testChap02();
 		try {
-			SimpleDatabase db = new SimpleDatabase(new FileReader("dbfile.txt"));
+
+			String fileUrl = Thread.currentThread().getContextClassLoader().getResource("dbfile.txt").getPath();
+			SimpleDatabase db = new SimpleDatabase(new FileReader(fileUrl));
 			Iterator<String> it = db.iterator();
 			while(it.hasNext()) {
 				String key = it.next();

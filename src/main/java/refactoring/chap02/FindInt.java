@@ -2,12 +2,13 @@ package refactoring.chap02;
 
 public class FindInt {
 	public static boolean find(int[]data, int target) {
-		boolean flag = false;
-		for(int i =0;i<data.length && !flag;i++) {
+		boolean found = false;
+		for(int i =0;i<data.length && !found;i++) {
 			if(data[i]==target) {
-				flag= true;
+				found= true;
+				break;
 			}
 		}
-		return flag;
+		return found;
 	}
 }

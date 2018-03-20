@@ -5,6 +5,10 @@ import refactoring.chap01.Robot;
 public class Main {
 
 	public static void main(String[] args) {
+		//testChap01();
+	}
+
+	private static void testChap01() {
 		Robot robot = new Robot("Andrew");
 		robot.order(Robot.COMMAND_WALK);
 		robot.order(Robot.COMMAND_STOP);

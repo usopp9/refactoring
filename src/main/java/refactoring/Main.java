@@ -11,6 +11,7 @@ import refactoring.chap02.FindInt;
 import refactoring.chap03.SortSample;
 import refactoring.chap04.Label;
 import refactoring.chap04.Person;
+import refactoring.chap05.Banner;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -19,7 +20,12 @@ public class Main {
 		//testChap02();
 		//testChap02_1();		
 		//testChap03();
+		//testChap04();
 		
+		Banner hello = new Banner("Hello, World!");
+		hello.print(3);
+	}
+	private static void testChap04() {
 		Person[] people = {
 				new Person(new Label("Alice"), new Label("alice@example.com")),
 				new Person(new Label("Bobby"), new Label("bobby@example.com")),

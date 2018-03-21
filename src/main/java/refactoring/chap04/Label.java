@@ -9,10 +9,9 @@ public class Label {
 	public void display() {
 		System.out.println("display: "+ label);
 	}
-	/*public String toString() {
-		return "\""+label+"\"";
-	}*/
-	
+	public boolean isNull() {
+		return false;
+	}
 	@Override
 	public String toString() {
 		return String.format("\"%s\"", label);

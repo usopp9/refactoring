@@ -1,5 +1,7 @@
 package refactoring.chap03;
 
+import java.util.Arrays;
+
 public class SortSample {
 	private final int[] _data;
 
@@ -9,6 +11,7 @@ public class SortSample {
 	}
 
 	public void sort() {
+	//	Arrays.sort(_data);  최종단계 리팩토링
 		for (int x = 0; x < _data.length - 1; x++) {
 			int m = x;
 			for (int y = x + 1; y < _data.length -1; y++) {

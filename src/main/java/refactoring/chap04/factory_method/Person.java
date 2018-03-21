@@ -1,4 +1,4 @@
-package refactoring.chap04;
+package refactoring.chap04.factory_method;
 
 public class Person {
 	private final Label name;

@@ -11,16 +11,16 @@ public class SortSample {
 	public void sort() {
 		for (int x = 0; x < _data.length - 1; x++) {
 			int m = x;
-			for (int y = x + 1; y < _data.length; y++) {
+			for (int y = x + 1; y < _data.length -1; y++) {
 				if (_data[m] > _data[y]) {
 					m = y;
 				}
 			}
-			assert isMin(m,x,_data.length-1);
+			assert isMin(m,x,_data.length-1) : this + ", x = "+ x;
 			int v = _data[m];
 			_data[m] = _data[x];
 			_data[x] = v;
-			assert isSorted(0,x+1);
+			assert isSorted(0,x+1) : this + ", x = "+ x;
 		}
 	}
 

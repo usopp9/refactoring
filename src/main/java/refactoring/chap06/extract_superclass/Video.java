@@ -1,22 +1,23 @@
 package refactoring.chap06.extract_superclass;
 
-public class Video {
-	private String videoData;
-
-	public Video(String videoData) {
-		super();
-		this.videoData = videoData;
+public class Video extends Media{
+	
+	public Video(String data) {
+		super(data);
 	}
+	@Override
 	public void play() {
-		System.out.printf("%s %s%n",videoData,"play");	
+		System.out.printf("%s %s%n",data,"play");	
 		
 	}
+	@Override
 	public void loop() {
-		System.out.printf("%s %s%n",videoData,"loop");		
+		System.out.printf("%s %s%n",data,"loop");		
 		
 	}
+	@Override
 	public void stop() {
-		System.out.printf("%s %s%n",videoData,"stop");		
+		System.out.printf("%s %s%n",data,"stop");		
 		
 	}
 

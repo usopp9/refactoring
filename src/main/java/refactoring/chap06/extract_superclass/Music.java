@@ -1,33 +1,25 @@
 package refactoring.chap06.extract_superclass;
 
-public class Music{
-	private String musicData;
+public class Music extends Media{
+	
 
-	public Music(String musicData) {
-		super();
-		this.musicData = musicData;
+	public Music(String data) {
+		super(data);
 	}
 
-	public String getMusicData() {
-		return musicData;
-	}
-
-	public void setMusicData(String musicData) {
-		this.musicData = musicData;
-	}
-
+	@Override
 	public void play() {
-		System.out.printf("%s %s%n",musicData,"play");		
+		System.out.printf("%s %s%n",data,"play");		
 		
 	}
-
+	@Override
 	public void loop() {
-		System.out.printf("%s %s%n",musicData,"loop");		
+		System.out.printf("%s %s%n",data,"loop");		
 		
 	}
-
+	@Override
 	public void stop() {
-		System.out.printf("%s %s%n",musicData,"stop");		
+		System.out.printf("%s %s%n",data,"stop");		
 		
 	}
 	

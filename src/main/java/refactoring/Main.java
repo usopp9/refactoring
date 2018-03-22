@@ -9,8 +9,14 @@ import refactoring.chap01.Robot;
 import refactoring.chap01.Simple.SimpleDatabase;
 import refactoring.chap02.FindInt;
 import refactoring.chap03.SortSample;
+
 import refactoring.chap04.factory_method.Label;
 import refactoring.chap04.factory_method.Person;
+
+import refactoring.chap05.Banner;
+import refactoring.chap06.Book;
+import refactoring.chap06.extract_superclass.Player;
+
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -20,7 +26,33 @@ public class Main {
 		//testChap02();
 		//testChap02_1();		
 		//testChap03();
+		//testChap04();
+		//testChap05();		
+		//testChap06();
 		
+		Player musicPlayer = new Player();
+		musicPlayer.setCurrentMedia(true);
+		Player videoPlayer = new Player();
+		videoPlayer.setCurrentMedia(false);
+		
+		play(musicPlayer);
+		play(videoPlayer);		
+	}
+	private static void play(Player player) {
+		player.play();
+		player.loop();
+		player.stop();
+	}
+	private static void testChap06() {
+		Book math = new Book("프로그래머 수학","ISBN4797329734","20000원","유키 히로시","hyuki@hyuki.com");
+		System.out.println("math: ");
+		System.out.println(math.toXml());
+	}
+	private static void testChap05() {
+		Banner hello = new Banner("Hello, World!");
+		hello.print(3);
+	}
+	private static void testChap04() {
 		Person[] people = {
 				new Person(new Label("Alice"), new Label("alice@example.com")),
 				new Person(new Label("Bobby"), new Label("bobby@example.com")),

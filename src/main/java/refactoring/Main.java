@@ -13,6 +13,7 @@ import refactoring.chap04.Label;
 import refactoring.chap04.Person;
 import refactoring.chap05.Banner;
 import refactoring.chap06.Book;
+import refactoring.chap06.extract_superclass.Player;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -22,8 +23,23 @@ public class Main {
 		//testChap02_1();		
 		//testChap03();
 		//testChap04();
-		//testChap05();
+		//testChap05();		
+		//testChap06();
 		
+		Player musicPlayer = new Player();
+		musicPlayer.setCurrentMedia(true);
+		Player videoPlayer = new Player();
+		videoPlayer.setCurrentMedia(false);
+		
+		play(musicPlayer);
+		play(videoPlayer);		
+	}
+	private static void play(Player player) {
+		player.play();
+		player.loop();
+		player.stop();
+	}
+	private static void testChap06() {
 		Book math = new Book("프로그래머 수학","ISBN4797329734","20000원","유키 히로시","hyuki@hyuki.com");
 		System.out.println("math: ");
 		System.out.println(math.toXml());
@@ -64,7 +80,6 @@ public class Main {
 	}
 	private static void testChap02_1() {
 		try {
-
 			String fileUrl = Thread.currentThread().getContextClassLoader().getResource("dbfile.txt").getPath();
 			SimpleDatabase db = new SimpleDatabase(new FileReader(fileUrl));
 			Iterator<String> it = db.iterator();
@@ -90,9 +105,8 @@ public class Main {
 
 	private static void testChap01() {
 		Robot robot = new Robot("Andrew");
-		robot.order(0);//walk
-		robot.order(1);//stop
-		robot.order(2);//jump
+		robot.order(Robot.COMMAND_WALK);
+		robot.order(Robot.COMMAND_STOP);
+		robot.order(Robot.COMMAND_JUMP);
 	}
-
 }

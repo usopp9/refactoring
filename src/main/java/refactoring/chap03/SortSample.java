@@ -14,15 +14,35 @@ public class SortSample {
 	//	Arrays.sort(_data);  최종단계 리팩토링
 		for (int x = 0; x < _data.length - 1; x++) {
 			int m = x;
-			for (int y = x + 1; y < _data.length; y++) {
+			for (int y = x + 1; y < _data.length -1; y++) {
 				if (_data[m] > _data[y]) {
 					m = y;
 				}
 			}
+			assert isMin(m,x,_data.length-1) : this + ", x = "+ x;
 			int v = _data[m];
 			_data[m] = _data[x];
 			_data[x] = v;
+			assert isSorted(0,x+1) : this + ", x = "+ x;
 		}
+	}
+
+	private boolean isSorted(int start, int end) {
+		for(int i = start;i<end;i++) {
+			if(_data[i]>_data[i+1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean isMin(int pos, int start, int end) {
+		for(int i = start;i<=end;i++) {
+			if(_data[pos]>_data[i]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public String toString() {

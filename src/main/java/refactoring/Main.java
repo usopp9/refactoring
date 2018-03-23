@@ -2,7 +2,9 @@ package refactoring;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 import refactoring.chap01.Robot;
@@ -16,6 +18,7 @@ import refactoring.chap06.Book;
 import refactoring.chap06.extract_superclass.Player;
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
+import refactoring.chap08.Shape;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -28,7 +31,18 @@ public class Main {
 		//testChap05();		
 		//testChap06();
 		//testChap07();
+		//testChap08();
 		
+		List<Shape> shapes = Arrays.asList(
+					new Shape(Shape.TYPECODE_LINE, 0, 0, 100,200),
+					new Shape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
+					new Shape(Shape.TYPECODE_OVAL, 100, 200, 300,400)
+				);
+		for(Shape s :shapes) {
+			s.draw();
+		}
+	}
+	private static void testChap08() {
 		Item book = new Item(ItemType.Book, "세계 역사", 4800);
 		Item dvd = new Item(ItemType.DVD, "뉴욕의 꿈 특별판", 3000);
 		Item soft = new Item(ItemType.SOFTWARD, "튜링 머신", 3200);

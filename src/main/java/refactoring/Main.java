@@ -22,7 +22,7 @@ import refactoring.chap08.Shape;
 
 public class Main {
 	private static Random random = new Random(1234);
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		//testChap01();
 		//testChap02();
 		//testChap02_1();		
@@ -35,9 +35,10 @@ public class Main {
 		
 
 		List<Shape> shapes = Arrays.asList(
-					new Shape(Shape.TYPECODE_LINE, 0, 0, 100,200),
-					new Shape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
-					new Shape(Shape.TYPECODE_OVAL, 100, 200, 300,400)
+					Shape.createShape(Shape.TYPECODE_LINE, 0, 0, 100,200),
+					Shape.createShape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
+					Shape.createShape(Shape.TYPECODE_OVAL, 100, 200, 300,400),
+					Shape.createShape(Shape.TYPECODE_TRIANGLE, 40, 50, 60,70)
 				);
 		for(Shape s :shapes) {
 			s.draw();

@@ -14,6 +14,8 @@ import refactoring.chap04.Person;
 import refactoring.chap05.Banner;
 import refactoring.chap06.Book;
 import refactoring.chap06.extract_superclass.Player;
+import refactoring.chap07.Item;
+import refactoring.chap07.ItemType;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -25,14 +27,23 @@ public class Main {
 		//testChap04();
 		//testChap05();		
 		//testChap06();
+		//testChap07();
 		
+		Item book = new Item(ItemType.Book, "세계 역사", 4800);
+		Item dvd = new Item(ItemType.DVD, "뉴욕의 꿈 특별판", 3000);
+		Item soft = new Item(ItemType.SOFTWARD, "튜링 머신", 3200);
+		System.out.printf("%5s = %s%n","book",book);
+		System.out.printf("%5s = %s%n","dvd",dvd);
+		System.out.printf("%5s = %s%n","soft",soft);
+	}
+	private static void testChap07() {
 		Player musicPlayer = new Player();
 		musicPlayer.setCurrentMedia(true);
 		Player videoPlayer = new Player();
 		videoPlayer.setCurrentMedia(false);
 		
 		play(musicPlayer);
-		play(videoPlayer);		
+		play(videoPlayer);
 	}
 	private static void play(Player player) {
 		player.play();

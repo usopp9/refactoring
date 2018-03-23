@@ -1,8 +1,10 @@
 package refactoring.chap08;
 
 public class ShapeRectangle extends Shape {
-
-	public ShapeRectangle(int startx, int starty, int endx, int endy) {
+	public static ShapeRectangle createShapeRectangle(int startx, int starty, int endx, int endy) {
+		return new ShapeRectangle(startx, starty, endx, endy);
+	}
+	private ShapeRectangle(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 	}
 

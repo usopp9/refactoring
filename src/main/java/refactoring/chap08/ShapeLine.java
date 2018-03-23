@@ -1,8 +1,11 @@
 package refactoring.chap08;
 
 public class ShapeLine extends Shape {
-
-	public ShapeLine(int startx, int starty, int endx, int endy) {
+	
+	public static ShapeLine createShapeLine(int startx, int starty, int endx, int endy) {
+		return new ShapeLine(startx, starty, endx, endy);
+	}
+	private ShapeLine(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 	}
 	@Override

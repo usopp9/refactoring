@@ -10,20 +10,6 @@ public abstract class Shape {
 	private final int endx;
 	private final int endy;
 	
-	public static Shape createShape(int typecode, int startx, int starty, int endx, int endy){
-		switch (typecode) {
-		case TYPECODE_LINE:
-			return new ShapeLine(startx,starty,endx,endy);
-		case TYPECODE_RECTANGLE:
-			return new ShapeRectangle(startx,starty,endx,endy);
-		case TYPECODE_OVAL:
-			return new ShapeOval(startx,starty,endx,endy);
-		case TYPECODE_TRIANGLE:
-			return new ShapeTriangle(startx,starty,endx,endy);
-		default:
-			throw new IllegalArgumentException("typecode = " + typecode);
-		}
-	}
 	
 	public Shape(int startx, int starty, int endx, int endy) {
 		this.startx = startx;

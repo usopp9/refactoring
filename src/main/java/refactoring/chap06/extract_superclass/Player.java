@@ -9,6 +9,10 @@ public class Player {
 			this.isMusic = isMusic;
 		}
 		
+	/*private Media media;
+	public void setMedia(Media media) {
+		this.media = media;
+	}*/
 		public void play() {
 			if(isMusic) {
 				playMusic();
@@ -16,7 +20,10 @@ public class Player {
 				playVideo();
 			}
 		}
-		public void loop() {
+	/*public void play() {
+		media.play();
+	}*/
+	public void loop() {
 			if(isMusic) {
 				loopMusic();
 			}else {
@@ -24,6 +31,9 @@ public class Player {
 			}
 		}
 		
+	/*public void loop() {
+		media.loop();
+	}*/
 		public void stop() {
 			if(isMusic) {
 				stopMusic();
@@ -31,6 +41,9 @@ public class Player {
 				stopVideo();
 			}
 		}
+	/*public void stop() {
+		media.stop();
+	}*/
 		private void playVideo() {
 			
 			video.play();	

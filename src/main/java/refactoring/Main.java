@@ -17,18 +17,22 @@ import refactoring.chap04.factory_method.Person;
 
 import refactoring.chap05.Banner;
 import refactoring.chap06.Book;
+import refactoring.chap06.extract_superclass.Media;
 import refactoring.chap06.extract_superclass.Player;
 
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
 import refactoring.chap08.Shape;
+import refactoring.chap08.ShapeLine;
+import refactoring.chap08.ShapeOval;
+import refactoring.chap08.ShapeRectangle;
+import refactoring.chap08.ShapeTriangle;
 
 
 public class Main {
 	private static Random random = new Random(1234);
 	public static void main(String[] args){
 		//testChap01();
-
 		//testChap02();
 		//testChap02_1();		
 		//testChap03();
@@ -40,10 +44,10 @@ public class Main {
 		
 
 		List<Shape> shapes = Arrays.asList(
-					Shape.createShape(Shape.TYPECODE_LINE, 0, 0, 100,200),
-					Shape.createShape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
-					Shape.createShape(Shape.TYPECODE_OVAL, 100, 200, 300,400),
-					Shape.createShape(Shape.TYPECODE_TRIANGLE, 40, 50, 60,70)
+					ShapeLine.createShapeLine( 0, 0, 100,200),
+					ShapeRectangle.createShapeRectangle(10, 20, 30,40),
+					ShapeOval.createShapeOval(100, 200, 300,400),
+					ShapeTriangle.createShapeTriangle(40, 50, 60,70)
 				);
 		for(Shape s :shapes) {
 			s.draw();

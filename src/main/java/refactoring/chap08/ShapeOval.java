@@ -1,8 +1,10 @@
 package refactoring.chap08;
 
 public class ShapeOval extends Shape {
-
-	public ShapeOval(int startx, int starty, int endx, int endy) {
+	public static ShapeOval createShapeOval(int startx, int starty, int endx, int endy) {
+		return new ShapeOval(startx, starty, endx, endy);
+	}
+	private ShapeOval(int startx, int starty, int endx, int endy) {
 		super(startx, starty, endx, endy);
 	}
 	@Override

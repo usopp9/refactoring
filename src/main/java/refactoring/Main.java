@@ -19,6 +19,7 @@ import refactoring.chap06.extract_superclass.Player;
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
 import refactoring.chap08.Shape;
+import refactoring.chap09.Logger;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -32,8 +33,23 @@ public class Main {
 		//testChap06();
 		//testChap07();
 		//testChap08();
+		//testChap08_1();
 		
 
+		Logger logger = new Logger();
+		logger.log("infomation #1");
+		
+		logger.start();
+		logger.log("infomation #2");
+		logger.start();
+		logger.log("infomation #3");
+		
+		logger.stop();
+		logger.log("infomation #4");
+		logger.stop();
+		logger.log("infomation #5");
+	}
+	private static void testChap08_1() {
 		List<Shape> shapes = Arrays.asList(
 					Shape.createShape(Shape.TYPECODE_LINE, 0, 0, 100,200),
 					Shape.createShape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),

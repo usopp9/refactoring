@@ -3,18 +3,26 @@ package refactoring.chap09;
 public class Logger {
 	public static final int STATE_STOPPED = 0;
 	public static final int STATE_LOGGING = 1;
-	private int state;
+	private State state;
 	
 	public Logger() {
 		setState(STATE_STOPPED);
 	}
 	
 	public int getState() {
-		return state;
+		return state.getTypeCode();
 	}
 
 	public void setState(int state) {
-		this.state = state;
+		switch (state) {
+		case STATE_STOPPED:
+			this.state= new StateStopped();
+			break;
+		case STATE_LOGGING:
+			this.state = new StateLogging();
+		default:
+			System.out.println("Invalid state : "+ state);
+		}
 	}
 
 	public void start() {

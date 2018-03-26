@@ -11,19 +11,14 @@ import refactoring.chap01.Robot;
 import refactoring.chap01.Simple.SimpleDatabase;
 import refactoring.chap02.FindInt;
 import refactoring.chap03.SortSample;
-
 import refactoring.chap04.factory_method.Label;
 import refactoring.chap04.factory_method.Person;
-
 import refactoring.chap05.Banner;
 import refactoring.chap06.Book;
-import refactoring.chap06.extract_superclass.Media;
 import refactoring.chap06.extract_superclass.Player;
-
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
 import refactoring.chap08.Shape;
-
 import refactoring.chap08.ShapeLine;
 import refactoring.chap08.ShapeOval;
 import refactoring.chap08.ShapeRectangle;

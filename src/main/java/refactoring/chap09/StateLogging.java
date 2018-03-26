@@ -2,17 +2,14 @@ package refactoring.chap09;
 
 public class StateLogging extends State {
 	private static final StateLogging instance = new StateLogging();
-	
-	
+		
 	public static StateLogging getInstance() {
 		return instance;
 	}
 
 	public StateLogging() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
-
 	/*@Override
 	public int getTypeCode() {
 		return Logger.STATE_LOGGING;

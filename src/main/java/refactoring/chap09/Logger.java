@@ -1,20 +1,20 @@
 package refactoring.chap09;
 
 public class Logger {
-	public static final int STATE_STOPPED = 0;
-	public static final int STATE_LOGGING = 1;
+/*	public static final int STATE_STOPPED = 0;
+	public static final int STATE_LOGGING = 1;*/
 	private State state;
 	
 	public Logger() {
-		setState(STATE_STOPPED);
+		setState(StateStopped.getInstance());
 	}
 	
-	public int getState() {
+	/*public int getState() {
 		return state.getTypeCode();
 	}
-
-	public void setState(int state) {
-		switch (state) {
+*/
+	public void setState(State state) {
+	/*	switch (state) {
 		case STATE_STOPPED:
 			this.state= new StateStopped();
 			break;
@@ -22,11 +22,13 @@ public class Logger {
 			this.state = new StateLogging();
 		default:
 			System.out.println("Invalid state : "+ state);
-		}
+		}*/
+		this.state = state;
 	}
 
 	public void start() {
-		switch(getState()) {
+		state.start(this);
+		/*switch(getState()) {
 		case STATE_STOPPED:
 			System.out.println("** START LOGGING **");
 			setState(STATE_LOGGING);
@@ -35,10 +37,11 @@ public class Logger {
 			break;
 		default:
 			System.out.println("Invalid state : "+getState());
-		}
+		}*/
 	}
 	public void stop() {
-		switch (getState()) {
+		state.stop(this);
+		/*switch (getState()) {
 			case STATE_STOPPED:
 				break;
 			case STATE_LOGGING:
@@ -47,10 +50,11 @@ public class Logger {
 				break;
 			default:
 				System.out.println("Invalid state : "+getState());
-		}
+		}*/
 	}
 	public void log(String info) {
-		switch (getState()) {
+		state.log(info);
+		/*switch (getState()) {
 		case STATE_STOPPED:
 			System.out.println("Ignoring : "+info);
 			break;
@@ -59,6 +63,6 @@ public class Logger {
 			break;
 		default:
 			System.out.println("Invalid state : "+getState());
-		}
+		}*/
 	}
 }

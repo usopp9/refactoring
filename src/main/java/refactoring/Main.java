@@ -23,11 +23,9 @@ import refactoring.chap08.ShapeOval;
 import refactoring.chap08.ShapeRectangle;
 import refactoring.chap08.ShapeTriangle;
 import refactoring.chap09.Logger;
-<<<<<<< HEAD
 
-=======
 import refactoring.chap10.Robot;
->>>>>>> refs/heads/master
+
 
 public class Main {
 	private static Random random = new Random(1234);

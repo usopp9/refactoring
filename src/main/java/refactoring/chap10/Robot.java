@@ -25,21 +25,21 @@ public class Robot {
 
 	private void executeCommand(String commandString) throws InvalidCommandException {
 		Command command = Command.parseCommand(commandString);
-		executeCommand(command);
+		command.exexute(this);
 	}
 
-	private void executeCommand(Command command){
-		if (command == Command.FORWARD) {
-			position.relativeMove(direction.getX(), direction.getY());
-		} else if (command == Command.BACKWARD) {
-			position.relativeMove(-direction.getX(), -direction.getY());
-		} else if (command == Command.TURN_RIGHT) {
-			direction.setDirection(direction.getY(), -direction.getX());
-		} else if (command == Command.TURN_LEFT) {
-			direction.setDirection(-direction.getY(), direction.getX());
-		}
+	public void forward() {
+		position.relativeMove(direction.getX(), direction.getY());
 	}
-
+	public void backward() {
+		position.relativeMove(-direction.getX(), -direction.getY());
+	}
+	public void right() {
+		direction.setDirection(direction.getY(), -direction.getX());	
+	}
+	public void left() {
+		direction.setDirection(-direction.getY(), direction.getX());
+	}
 	@Override
 	public String toString() {
 		return String.format("Robot [%s, %s, %s]", name, position, direction);

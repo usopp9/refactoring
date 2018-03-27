@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import refactoring.chap01.Robot;
 import refactoring.chap01.Simple.SimpleDatabase;
 import refactoring.chap02.FindInt;
 import refactoring.chap03.SortSample;
@@ -20,6 +19,7 @@ import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
 import refactoring.chap08.Shape;
 import refactoring.chap09.Logger;
+import refactoring.chap10.Robot;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -34,7 +34,21 @@ public class Main {
 		//testChap07();
 		//testChap08();
 		//testChap08_1();
+		//testChap09();
 		
+		Robot robot = new Robot("Andrew");
+		System.out.println(robot.toString());
+		
+		robot.execute("forward right forward");
+		System.out.println(robot.toString());
+		
+		robot.execute("left backward left forward");
+		System.out.println(robot.toString());
+		
+		robot.execute("right forward forward farvard");
+		System.out.println(robot.toString());
+	}
+	private static void testChap09() {
 		Logger logger = new Logger();
 		logger.log("infomation #1");
 		
@@ -145,9 +159,9 @@ public class Main {
 	}
 
 	private static void testChap01() {
-		Robot robot = new Robot("Andrew");
-		robot.order(Robot.COMMAND_WALK);
-		robot.order(Robot.COMMAND_STOP);
-		robot.order(Robot.COMMAND_JUMP);
+		refactoring.chap01.Robot robot = new refactoring.chap01.Robot("Andrew");
+		robot.order(refactoring.chap01.Robot.COMMAND_WALK);
+		robot.order(refactoring.chap01.Robot.COMMAND_STOP);
+		robot.order(refactoring.chap01.Robot.COMMAND_JUMP);
 	}
 }

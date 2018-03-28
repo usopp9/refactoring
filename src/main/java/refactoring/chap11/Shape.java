@@ -10,7 +10,13 @@ public class Shape {
 	private final int startY;
 	private final int endX;
 	private final int endY;
-	public Shape(int typecode, int startX, int startY, int endX, int endY) {
+	
+	
+	//factory method
+	public static Shape create(int typecode, int startX, int startY, int endX, int endY) {
+		return new Shape(typecode, startX, startY, endX, endY);
+	}
+	private Shape(int typecode, int startX, int startY, int endX, int endY) {
 		super();
 		this.typecode = typecode;
 		this.startX = startX;

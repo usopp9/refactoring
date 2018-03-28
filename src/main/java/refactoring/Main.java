@@ -17,9 +17,9 @@ import refactoring.chap06.Book;
 import refactoring.chap06.extract_superclass.Player;
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
-import refactoring.chap08.Shape;
 import refactoring.chap09.Logger;
 import refactoring.chap10.Robot;
+import refactoring.chap11.Shape;
 
 public class Main {
 	private static Random random = new Random(1234);
@@ -35,7 +35,20 @@ public class Main {
 		//testChap08();
 		//testChap08_1();
 		//testChap09();
+		//testChap10();
 		
+		List<Shape> shapes = Arrays.asList(
+				new Shape(Shape.TYPECODE_LINE, 0, 0, 100, 200),
+				new Shape(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40),
+				new Shape(Shape.TYPECODE_OVAL, 100, 200, 300, 400)
+				);
+		
+		for(Shape s :shapes) {
+			s.draw();
+		}
+		
+	}
+	private static void testChap10() {
 		Robot robot = new Robot("Andrew");
 		System.out.println(robot.toString());
 		
@@ -63,12 +76,12 @@ public class Main {
 		logger.log("infomation #5");
 	}
 	private static void testChap08_1() {
-		List<Shape> shapes = Arrays.asList(
-					new Shape(Shape.TYPECODE_LINE, 0, 0, 100,200),
-					new Shape(Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
-					new Shape(Shape.TYPECODE_OVAL, 100, 200, 300,400)
+		List<refactoring.chap08.Shape> shapes = Arrays.asList(
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_LINE, 0, 0, 100,200),
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_OVAL, 100, 200, 300,400)
 				);
-		for(Shape s :shapes) {
+		for(refactoring.chap08.Shape s :shapes) {
 			s.draw();
 		}
 	}

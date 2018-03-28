@@ -17,14 +17,18 @@ import refactoring.chap06.Book;
 import refactoring.chap06.extract_superclass.Player;
 import refactoring.chap07.Item;
 import refactoring.chap07.ItemType;
-import refactoring.chap08.Shape;
+
+
 import refactoring.chap08.ShapeLine;
 import refactoring.chap08.ShapeOval;
 import refactoring.chap08.ShapeRectangle;
 import refactoring.chap08.ShapeTriangle;
+
 import refactoring.chap09.Logger;
 
 import refactoring.chap10.Robot;
+
+import refactoring.chap11.Shape;
 
 
 public class Main {
@@ -41,7 +45,20 @@ public class Main {
 		//testChap08();
 		//testChap08_1();
 		//testChap09();
-
+		//testChap10();
+		
+		List<Shape> shapes = Arrays.asList(
+				new Shape(Shape.TYPECODE_LINE, 0, 0, 100, 200),
+				new Shape(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40),
+				new Shape(Shape.TYPECODE_OVAL, 100, 200, 300, 400)
+				);
+		
+		for(Shape s :shapes) {
+			s.draw();
+		}
+		
+	}
+	private static void testChap10() {
 		Robot robot = new Robot("Andrew");
 		System.out.println(robot.toString());
 		
@@ -69,17 +86,17 @@ public class Main {
 		logger.stop();
 		logger.log("infomation #5");
 	}
-	private static void testChap08_1() {
-		List<Shape> shapes = Arrays.asList(
-					ShapeLine.createShapeLine( 0, 0, 100,200),
-					ShapeRectangle.createShapeRectangle(10, 20, 30,40),
-					ShapeOval.createShapeOval(100, 200, 300,400),
-					ShapeTriangle.createShapeTriangle(40, 50, 60,70)
+	/*private static void testChap08_1() {
+		List<refactoring.chap08.Shape> shapes = Arrays.asList(
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_LINE, 0, 0, 100,200),
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_RECTANGLE, 10, 20, 30,40),
+					new refactoring.chap08.Shape(refactoring.chap08.Shape.TYPECODE_OVAL, 100, 200, 300,400)
+
 				);
-		for(Shape s :shapes) {
+		for(refactoring.chap08.Shape s :shapes) {
 			s.draw();
 		}
-	}
+	}*/
 	private static void testChap08() {
 		Item book = new Item(ItemType.BOOK, "세계 역사", 4800);
 		Item dvd = new Item(ItemType.DVD, "뉴욕의 꿈 특별판", 3000);

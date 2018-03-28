@@ -39,9 +39,9 @@ public class Main {
 		//testChap10();
 		
 		List<Shape> shapes = Arrays.asList(
-				Shape.create(Shape.TYPECODE_LINE, 0, 0, 100, 200),
-				Shape.create(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40),
-				Shape.create(Shape.TYPECODE_OVAL, 100, 200, 300, 400)
+				Shape.createLine(0, 0, 100, 200),
+				Shape.createRectangle(10, 20, 30, 40),
+				Shape.createOval(100, 200, 300, 400)
 				);
 		
 		for(Shape s :shapes) {

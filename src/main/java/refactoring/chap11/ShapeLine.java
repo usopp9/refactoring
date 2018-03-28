@@ -1,10 +1,14 @@
 package refactoring.chap11;
 
 public class ShapeLine extends Shape {
+	private static final ShapeLine instance = new ShapeLine();
 
-	public ShapeLine(int startX, int startY, int endX, int endY) {
-		super(startX, startY, endX, endY);
+	public static ShapeLine getInstance(int startX, int startY, int endX, int endY) {
+		instance.setShape(startX, startY, endX, endY);
+		return instance;
 	}
+	
+	private ShapeLine() {}
 
 	@Override
 	public String getName() {

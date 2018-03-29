@@ -1,5 +1,6 @@
 package refactoring;
 
+import java.awt.EventQueue;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import refactoring.chap07.ItemType;
 import refactoring.chap09.Logger;
 import refactoring.chap10.Robot;
 import refactoring.chap11.Shape;
+import refactoring.chap12.IntegerDisplay;
 
 
 public class Main {
@@ -37,7 +39,19 @@ public class Main {
 		//testChap08_1();
 		//testChap09();
 		//testChap10();
-		
+		//testChap11();
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					IntegerDisplay frame = new IntegerDisplay();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	private static void testChap11() {
 		List<Shape> shapes = Arrays.asList(
 				Shape.create(Shape.TYPECODE_LINE, 0, 0, 100, 200),
 				Shape.create(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40),
@@ -47,7 +61,6 @@ public class Main {
 		for(Shape s :shapes) {
 			s.draw();
 		}
-		
 	}
 	private static void testChap10() {
 		Robot robot = new Robot("Andrew");

@@ -42,7 +42,10 @@ public class Main {
 		//testChap08_1();
 		//testChap09();
 		//testChap10();
+		//testChap11();
 		
+	}
+	private static void testChap11() {
 		List<Shape> shapes = Arrays.asList(
 				FactoryShape.createShape(ShapeType.LINE,0, 0, 100, 200),
 				FactoryShape.createShape(ShapeType.RECTANGLE,10, 20, 30, 40),
@@ -52,7 +55,6 @@ public class Main {
 		for(Shape s :shapes) {
 			s.draw();
 		}
-		
 	}
 	private static void testChap10() {
 		Robot robot = new Robot("Andrew");

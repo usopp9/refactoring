@@ -2,36 +2,25 @@ package refactoring.chap13;
 
 import java.util.Random;
 
-public class Dice extends Random {
+public class Dice{
+	private final Random random;
 	public Dice() {
-		super(314159L);
+		this(314159L);
 	}
 	public Dice(Long seed) {
-		super(seed);
-	}
-	@Override
-	public int nextInt() {
-		return nextInt(6)+1;
-	}
-	@Override
-	public void nextBytes(byte[] arg0) {
-		throw new UnsupportedOperationException();
-	}
-	@Override
-	public double nextDouble() {
-		throw new UnsupportedOperationException();
-	}
-	@Override
-	public float nextFloat() {
-		throw new UnsupportedOperationException();
-	}
-	@Override
-	public synchronized double nextGaussian() {
-		throw new UnsupportedOperationException();
-	}	
-	@Override
-	public long nextLong() {
-		throw new UnsupportedOperationException();
+		random = new Random(seed);
 	}
 	
+	
+	public Random getRandom() {
+		return random;
+	}
+	
+	public int nextInt() {
+		return random.nextInt(6)+1;
+	}
+	
+	public void setSeed(Long seed) {
+		random.setSeed(seed);
+	}
 }

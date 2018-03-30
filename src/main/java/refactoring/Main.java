@@ -27,7 +27,6 @@ import refactoring.chap13.Dice;
 public class Main {
 	private static Random random = new Random(1234);
 
-
 	public static void main(String[] args) {
 		// testChap01();
 		// testChap02();
@@ -52,7 +51,6 @@ public class Main {
 			}
 			System.out.println();
 		}
-
 	}
 
 	private static void testChap12() {
@@ -70,18 +68,15 @@ public class Main {
 	}
 
 	private static void testChap11() {
-		List<Shape> shapes = Arrays.asList(
-				Shape.create(Shape.TYPECODE_LINE, 0, 0, 100, 200),
+		List<Shape> shapes = Arrays.asList(Shape.create(Shape.TYPECODE_LINE, 0, 0, 100, 200),
 				Shape.create(Shape.TYPECODE_RECTANGLE, 10, 20, 30, 40),
-				Shape.create(Shape.TYPECODE_OVAL, 100, 200, 300, 400)
-				);
-	
+				Shape.create(Shape.TYPECODE_OVAL, 100, 200, 300, 400));
+
 		for (Shape s : shapes) {
 
 			s.draw();
 		}
 	}
-
 
 	private static void testChap10() {
 
@@ -115,26 +110,20 @@ public class Main {
 
 	}
 
-
 	private static void testChap08_1() {
 		List<refactoring.chap08.Shape> shapes = Arrays.asList(
-
-				refactoring.chap08.ShapeLine.createShapeLine( 0, 0, 100,200),
-				refactoring.chap08.ShapeRectangle.createShapeRectangle(10, 20, 30,40),
-				refactoring.chap08.ShapeOval.createShapeOval(100, 200, 300,400),
-				refactoring.chap08.ShapeTriangle.createShapeTriangle(40, 50, 60,70)
-			);
-	for(refactoring.chap08.Shape s :shapes) {
-		s.draw();
-	}			
-		
-
+				refactoring.chap08.ShapeLine.createShapeLine(0, 0, 100, 200),
+				refactoring.chap08.ShapeRectangle.createShapeRectangle(10, 20, 30, 40),
+				refactoring.chap08.ShapeOval.createShapeOval(100, 200, 300, 400),
+				refactoring.chap08.ShapeTriangle.createShapeTriangle(40, 50, 60, 70));
+		for (refactoring.chap08.Shape s : shapes) {
+			s.draw();
+		}
 	}
 
 	private static void testChap08() {
 		Item book = new Item(ItemType.BOOK, "세계 역사", 4800);
 		Item dvd = new Item(ItemType.DVD, "뉴욕의 꿈 특별판", 3000);
-
 		Item soft = new Item(ItemType.SOFTWARE, "튜링 머신", 3200);
 		System.out.printf("%5s = %s%n", "book", book);
 		System.out.printf("%5s = %s%n", "dvd", dvd);
@@ -170,7 +159,6 @@ public class Main {
 	}
 
 	private static void testChap04() {
-
 
 		Person[] people = { new Person(new Label("Alice"), new Label("alice@example.com")),
 				new Person(new Label("Bobby"), new Label("bobby@example.com")), new Person(new Label("Chris")), };
@@ -218,8 +206,6 @@ public class Main {
 		}
 	}
 
-
-
 	private static void testChap02() {
 		int[] data = { 1, 9, 0, 2, 8, 5, 6, 3, 4, 7 };
 		if (FindInt.find(data, 5)) {
@@ -238,6 +224,3 @@ public class Main {
 	}
 
 }
-
-
-

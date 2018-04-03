@@ -25,11 +25,13 @@ import refactoring.chap11.Shape;
 import refactoring.chap12.IntegerDisplay;
 import refactoring.chap13.Dice;
 import refactoring.chap14.AddressFile;
+import refactoring.chap15.CSVFileTreePrinter;
+import refactoring.chap15.CSVStringTablePrinter;
 
 public class Main {
 	private static Random random = new Random(1234);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// testChap01();
 		// testChap02();
 		// testChap02_1();
@@ -45,7 +47,17 @@ public class Main {
 		// testChap11();
 		// testChap12();
 		// testChap13();
-		
+		// testChap14();
+
+		final String SAMPLE_CSV_STRING = "좋은 아침입니다.,Good morning.\n안녕하세요~,Hello.\n"
+				+ "안녕하세요.,Good evening.\n안녕히 주무세요.,Good nigth.\n";
+		final String SAMPLE_CSV_FILE = "file.csv";
+		new CSVStringTablePrinter(SAMPLE_CSV_STRING).print();
+		new CSVFileTreePrinter(SAMPLE_CSV_FILE).print();
+				
+	}
+
+	private static void testChap14() {
 		try {
 			AddressFile file = new AddressFile("address.txt");
 			file.getDatabase().set("Hiroshi Yuki", "hyuki@example.com");
@@ -62,7 +74,6 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	private static void testChap13() {

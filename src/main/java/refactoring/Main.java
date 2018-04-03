@@ -42,6 +42,10 @@ public class Main {
 		// testChap10();
 		// testChap11();
 		// testChap12();
+		// testChap13();
+	}
+
+	private static void testChap13() {
 		List<Dice> dices = Arrays.asList(new Dice(), new Dice(456L), new Dice());
 		dices.get(2).setSeed(456L);
 

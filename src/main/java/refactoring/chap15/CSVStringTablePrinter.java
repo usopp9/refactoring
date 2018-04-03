@@ -2,11 +2,12 @@ package refactoring.chap15;
 
 import java.io.IOException;
 
-public class CSVStringTablePrinter extends CSVStringReader {
+public class CSVStringTablePrinter extends CSVprinter {
 
-	public CSVStringTablePrinter(String string) {
-		super(string);
+	public CSVStringTablePrinter(CSVReader csvReader) {
+		super(csvReader);
 	}
+	@Override
 	public void print() throws IOException {
 		System.out.println("<table>");
 		String[] items = null;

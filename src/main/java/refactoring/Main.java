@@ -25,7 +25,9 @@ import refactoring.chap11.Shape;
 import refactoring.chap12.IntegerDisplay;
 import refactoring.chap13.Dice;
 import refactoring.chap14.AddressFile;
+import refactoring.chap15.CSVFileReader;
 import refactoring.chap15.CSVFileTreePrinter;
+import refactoring.chap15.CSVStringReader;
 import refactoring.chap15.CSVStringTablePrinter;
 
 public class Main {
@@ -52,8 +54,8 @@ public class Main {
 		final String SAMPLE_CSV_STRING = "좋은 아침입니다.,Good morning.\n안녕하세요~,Hello.\n"
 				+ "안녕하세요.,Good evening.\n안녕히 주무세요.,Good nigth.\n";
 		final String SAMPLE_CSV_FILE = "file.csv";
-		new CSVStringTablePrinter(SAMPLE_CSV_STRING).print();
-		new CSVFileTreePrinter(SAMPLE_CSV_FILE).print();
+		new CSVStringTablePrinter(new CSVStringReader(SAMPLE_CSV_STRING)).print();
+		new CSVFileTreePrinter(new CSVFileReader(SAMPLE_CSV_FILE)).print();
 
 	}
 

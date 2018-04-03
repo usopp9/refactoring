@@ -2,11 +2,12 @@ package refactoring.chap15;
 
 import java.io.IOException;
 
-public class CSVFileTreePrinter extends CSVFileReader {
+public class CSVFileTreePrinter extends CSVprinter {
 
-	public CSVFileTreePrinter(String string) throws IOException {
-		super(string);
+	public CSVFileTreePrinter(CSVReader csvReader) throws IOException {
+		super(csvReader);
 	}
+	@Override
 	public void print() throws IOException {
 		String[] prevItem = new String[0];
 		String[] item = null;

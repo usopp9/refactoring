@@ -21,7 +21,7 @@ public class AddressFile {
 		database.update();
 	}
 	public Enumeration names() {
-		return database.getProperties().propertyNames();
+		return database.keys();
 	}
 
 }

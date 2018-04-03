@@ -49,15 +49,15 @@ public class Main {
 		
 		try {
 			AddressFile file = new AddressFile("address.txt");
-			file.getDatabase().set("Hiroshi Yuki", "hyuki@example.com");
-			file.getDatabase().set("Tomura", "tomura@example.com");
-			file.getDatabase().set("Hanako Sato", "hanako@example.com");
-			file.getDatabase().update();
+			file.set("Hiroshi Yuki", "hyuki@example.com");
+			file.set("Tomura", "tomura@example.com");
+			file.set("Hanako Sato", "hanako@example.com");		
+			file.update();
 			
 			Enumeration<?> e = file.names();
 			while(e.hasMoreElements()) {
 				String name = (String)e.nextElement();
-				String mail = file.getDatabase().get(name);
+				String mail = file.get(name);
 				System.out.printf("name=%s, mail=%s%n",name,mail);
 			}
 		} catch (IOException e) {

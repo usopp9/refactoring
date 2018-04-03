@@ -4,14 +4,11 @@ import java.io.IOException;
 
 public class CSVFileTreePrinter extends CSVprinter {
 
-	public CSVFileTreePrinter(CSVReader csvReader) throws IOException {
-		super(csvReader);
-	}
 	@Override
-	public void print() throws IOException {
+	public void print(CSVReader csvReader) throws IOException {
 		String[] prevItem = new String[0];
 		String[] item = null;
-		while((item =readCSV()) != null) {
+		while((item =csvReader.readCSV()) != null) {
 			boolean justprint = false;
 			for(int column = 0; column < item.length; column++) {
 				if(justprint) {

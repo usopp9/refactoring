@@ -54,9 +54,11 @@ public class Main {
 		final String SAMPLE_CSV_STRING = "좋은 아침입니다.,Good morning.\n안녕하세요~,Hello.\n"
 				+ "안녕하세요.,Good evening.\n안녕히 주무세요.,Good nigth.\n";
 		final String SAMPLE_CSV_FILE = "file.csv";
-		new CSVStringTablePrinter(new CSVStringReader(SAMPLE_CSV_STRING)).print();
-		new CSVFileTreePrinter(new CSVFileReader(SAMPLE_CSV_FILE)).print();
-
+		CSVStringReader csvStrReader = new CSVStringReader(SAMPLE_CSV_STRING);
+		CSVFileReader csvFileReader = new CSVFileReader(SAMPLE_CSV_FILE);
+		
+		new CSVStringTablePrinter().print(csvStrReader);
+		new CSVFileTreePrinter().print(csvFileReader);
 	}
 
 	private static void testChap14() {
